@@ -20,9 +20,6 @@ namespace GithubGroup.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            base.OnModelCreating(modelBuilder);
-
-
             //Students
             modelBuilder.Entity<Student>().HasData(new Student { Id = 1, Email = "Saud@gmail.com" });
 
