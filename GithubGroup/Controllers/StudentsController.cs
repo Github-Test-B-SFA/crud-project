@@ -11,9 +11,9 @@ namespace GithubGroup.Controllers
     {
         private readonly ApplicationDbContext _db;
 
-        public StudentsController(ApplicationDbContext db)
+        public StudentsController(ApplicationDbContext DataBase)
         {
-            _db = db;
+            _db = DataBase;
         }
         public IActionResult Index()
         {
