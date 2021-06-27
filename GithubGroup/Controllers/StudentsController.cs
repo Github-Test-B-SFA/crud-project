@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GithubGroup.Data;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,16 @@ namespace GithubGroup.Controllers
 {
     public class StudentsController : Controller
     {
+        private readonly ApplicationDbContext _db;
+
+        public StudentsController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
         public IActionResult Index()
         {
+            var students = _db.students.ToList();
+            ViewData["students"] = students;
             return View();
         }
     }
