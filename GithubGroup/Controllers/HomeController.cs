@@ -25,7 +25,7 @@ namespace GithubGroup.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            return Json(new Controller());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
